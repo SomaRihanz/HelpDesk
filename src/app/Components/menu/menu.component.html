@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isweb$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isweb$ | async) ? 'over' : 'side'"
+      [opened]="(isweb$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="/Administrador">Administrador</a>
+      <a mat-list-item href="/Area">Area</a>
+      <a mat-list-item href="#">Calificacion</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isweb$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>YourHelpDesk</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
