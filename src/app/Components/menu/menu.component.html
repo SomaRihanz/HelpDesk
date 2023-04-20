@@ -1,29 +1,33 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isweb$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isweb$ | async) ? 'over' : 'side'"
-      [opened]="(isweb$ | async) === false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isweb$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isweb$ | async) ? 'over' : 'side'" [opened]="(isweb$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="/Administrador">Administrador</a>
-      <a mat-list-item href="/Area">Area</a>
-      <a mat-list-item href="#">Calificacion</a>
+      <a mat-list-item href="/Administrador"><mat-icon aria-hidden="true" aria-label="example home icon" fontIcon="home"
+          color="primary">Administrador</mat-icon>Administrador</a>
+      <a mat-list-item href="/Area"><mat-icon aria-hidden="true" aria-label="example home icon" fontIcon="crop"
+          color="primary">Area</mat-icon>Area</a>
+      <a mat-list-item href="/Calificacion"><mat-icon aria-hidden="true" aria-label="example home icon"
+          fontIcon="manage search" color="primary">Calificacion</mat-icon>Calificacion</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isweb$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>YourHelpDesk</span>
+      <ngx-avatar name="Julian Rodriguez"></ngx-avatar>
+
+ <ngx-avatar name="Camilo Daza"></ngx-avatar>
+
+ <ngx-avatar name="Nelson Ramirez"></ngx-avatar>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <div class="container">
+
+    </div>
     <router-outlet></router-outlet>
-    
+
   </mat-sidenav-content>
 </mat-sidenav-container>
