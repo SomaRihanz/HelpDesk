@@ -20,6 +20,7 @@ export class TablaComponent implements AfterViewInit {
 
   constructor() {
     this.dataSource = new TablaDataSource();
+    console.log(this.dataSource);
   }
 
   ngAfterViewInit(): void {
