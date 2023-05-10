@@ -26,8 +26,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AvatarModule } from 'ngx-avatar';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { CalificacionComponent } from './Components/calificacion/calificacion.component';
-import { ListaComponent } from './components/lista/lista.component';
 
 
 
@@ -39,9 +37,7 @@ import { ListaComponent } from './components/lista/lista.component';
     AreaComponent,
     MenuComponent,
     TablaComponent,
-    FormularioComponent,
-    CalificacionComponent,
-    ListaComponent
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +61,6 @@ import { ListaComponent } from './components/lista/lista.component';
     HttpClientModule,
     AvatarModule,
     MatFormFieldModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
