@@ -11,6 +11,9 @@ const routes: Routes = [
   {
     path:'Area',component:FormularioComponent
   },
+  {
+    path:'Calificacion',component:FormularioComponent
+  }, 
     
 
 
