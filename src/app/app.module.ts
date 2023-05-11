@@ -26,7 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AvatarModule } from 'ngx-avatar';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { CalificacionComponent } from './calificacion/calificacion.component';
+import { CalificacionComponent } from './Components/calificacion/calificacion.component';
 
 
 
@@ -39,7 +39,7 @@ import { CalificacionComponent } from './calificacion/calificacion.component';
     MenuComponent,
     TablaComponent,
     FormularioComponent,
-    CalificacionComponent
+    CalificacionComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +63,7 @@ import { CalificacionComponent } from './calificacion/calificacion.component';
     HttpClientModule,
     AvatarModule,
     MatFormFieldModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

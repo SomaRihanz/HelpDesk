@@ -1,1 +1,11 @@
-<p>calificacion works!</p>
+<mat-form-field>
+    <mat-label>Selecciona una opcione</mat-label>
+    <mat-select [formControl]="seleccionados" multiple [compareWith]="compararPorId">
+      <mat-option *ngFor="let opcion of opciones" [value]="opcion">
+        {{ opcion.nombre }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <button mat-raised-button color="primary" (click)="enviar()">Enviar Calificacion</button>
+  
