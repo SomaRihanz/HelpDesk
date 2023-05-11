@@ -41,7 +41,8 @@ import { ListaComponent } from './components/lista/lista.component';
     TablaComponent,
     FormularioComponent,
     CalificacionComponent,
-    ListaComponent
+    ListaComponent,
+    FormularioComponent,
   ],
   imports: [
     BrowserModule,
