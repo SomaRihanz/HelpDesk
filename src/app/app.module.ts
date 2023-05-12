@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AvatarModule } from 'ngx-avatar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { CalificacionComponent } from './Components/calificacion/calificacion.component';
+import { EmpresaComponent } from './Components/empresa/empresa.component';
 
 
 
@@ -40,6 +41,7 @@ import { CalificacionComponent } from './Components/calificacion/calificacion.co
     TablaComponent,
     FormularioComponent,
     CalificacionComponent,
+    EmpresaComponent,
   ],
   imports: [
     BrowserModule,

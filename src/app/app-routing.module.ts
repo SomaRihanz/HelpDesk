@@ -4,6 +4,7 @@ import { FormularioComponent } from './Components/formulario/formulario.componen
 import { TablaComponent } from './Components/tabla/tabla.component';
 import { AdministradorComponent } from './Components/administrador/administrador.component';
 import { CalificacionComponent } from './Components/calificacion/calificacion.component';
+import { EmpresaComponent } from './Components/empresa/empresa.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,9 @@ const routes: Routes = [
   {
     path:'Calificacion',component:CalificacionComponent
   },  
-
+  {
+    path:'Empresa',component:EmpresaComponent
+  }, 
 
 
 ];
