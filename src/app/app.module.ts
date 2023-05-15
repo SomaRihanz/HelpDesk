@@ -28,6 +28,8 @@ import { AvatarModule } from 'ngx-avatar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { CalificacionComponent } from './Components/calificacion/calificacion.component';
 import { EmpresaComponent } from './Components/empresa/empresa.component';
+import { LoginComponent } from './Components/login/login.component';
+
 
 
 
@@ -42,6 +44,8 @@ import { EmpresaComponent } from './Components/empresa/empresa.component';
     FormularioComponent,
     CalificacionComponent,
     EmpresaComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
