@@ -1,6 +1,6 @@
 <div class="container" id="container">
   <div class="form - container sign - in - container">
-    <form [ formGroup ]=" loginForm " ( ngSubmit )=" onSubmit ( ) ">
+    <form [formGroup]="loginForm"( ngSubmit )="onSubmit()">
       <h1>INGRESAR</h1>
 
       <input type="text" placeholder=" email " formControlName="username" />
@@ -8,14 +8,8 @@
         <strong> Requerido </strong>
       </mat-error>
 
-      <input
-        type=" password "
-        placeholder=" Password "
-        formControlName=" password"
-      />
-      <mat-error
-        *ngIf="loginForm.controls[' password '].hasError(' required ')"
-      >
+      <input type=" password " placeholder=" Password " formControlName=" password"/>
+      <mat-error *ngIf = "loginForm.controls['password'].hasError('required')">
         <strong> Requerido </strong>
       </mat-error>
 
@@ -30,6 +24,6 @@
     <figcaption> Mesa de ayuda </figcaption> 
         </div> 
         </div> 
-        </div>
+        
   </div>
 </div>
