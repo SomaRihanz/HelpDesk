@@ -1,29 +1,29 @@
 <div class="container" id="container">
-  <div class="form - container sign - in - container">
-    <form [formGroup]="loginForm"( ngSubmit )="onSubmit()">
+  <div class="form-container sign-in-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <h1>INGRESAR</h1>
 
-      <input type="text" placeholder=" email " formControlName="username" />
+      <input type="text" placeholder="email" formControlName="username" />
       <mat-error *ngIf="loginForm.controls['username'].hasError(' required ')">
         <strong> Requerido </strong>
-      </mat-error>
+      </mat-error>  
 
-      <input type=" password " placeholder=" Password " formControlName=" password"/>
-      <mat-error *ngIf = "loginForm.controls['password'].hasError('required')">
+      <input type="password" placeholder=" Password " formControlName="password"/>
+      <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
         <strong> Requerido </strong>
       </mat-error>
 
       <a href=" # "> ¿ Olvidaste tu contraseña ? </a>
-      <button type=" submit " mat - input>Ingresar</button>
+      <button type="submit" mat-input>Ingresar</button>
     </form>
   </div>
   <div class="overlay - container">
     <div class = " overlay "> 
         <div class=" overlay - panel overlay - left ">
-    <img src=" / assets / drogueria.jpg " alt=" "> 
+    <img src=" /assets/mesa.jpg" alt=" "> 
     <figcaption> Mesa de ayuda </figcaption> 
         </div> 
-        </div> 
+    </div> 
         
   </div>
 </div>

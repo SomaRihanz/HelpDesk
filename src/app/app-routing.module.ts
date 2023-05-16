@@ -5,6 +5,7 @@ import { TablaComponent } from './Components/tabla/tabla.component';
 import { AdministradorComponent } from './Components/administrador/administrador.component';
 import { CalificacionComponent } from './Components/calificacion/calificacion.component';
 import { EmpresaComponent } from './Components/empresa/empresa.component';
+import { LoginComponent } from './Components/login/login.component';
 //import { EquipoComponent } from './Components/equipo/equipo.component';
 
 const routes: Routes = [
@@ -20,7 +21,9 @@ const routes: Routes = [
   {
     path:'Empresa',component:EmpresaComponent
   }, 
-  
+  // {
+  //   path:'Login',component:LoginComponent
+  // }, 
 
 ];
 
