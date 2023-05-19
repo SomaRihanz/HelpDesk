@@ -9,27 +9,27 @@ import Swal from 'sweetalert2'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor ( public loginservice:LoginService ) {
+  constructor (public loginservice:LoginService) {
 
   }
 
-  em:any = "";
-  pass:any = "";
+  em:any ="";
+  pass:any ="";
   loginForm = new FormGroup ( {
-    username : new FormControl ( ' ' , Validators.required ) ,
-    password : new FormControl ( ' ' , Validators.required )
+    username : new FormControl ('',Validators.required),
+    password : new FormControl ('',Validators.required),
   } ) ;
   async onSubmit( ){
     console.log("prueba");
   this.em = this.loginForm.controls["username"].value;
   this.pass = this.loginForm.controls["password"].value;
-    if(this.em==="usuario" && this.pass==="1234") {
+    if(this.em==="" && this.pass==="") {
       Swal.fire(
         'Muy bien!',
          'Se ha logueado correctamente',
          'success'
       )         
-      localStorage.setItem ( ' login ' , ' login ' ) ;
+      localStorage.setItem('login','login') ;
       
       this.loginservice.login.next("login");
   }else{
@@ -37,7 +37,7 @@ export class LoginComponent {
         icon: 'error',
         title: 'Opss', 
         text: 'logueo fallido',
-        footer: 'usuario y contraseña1234'
+        footer: ''
       })
     }
 }

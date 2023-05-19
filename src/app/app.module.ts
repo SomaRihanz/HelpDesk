@@ -44,7 +44,7 @@ import { LoginComponent } from './Components/login/login.component';
     FormularioComponent,
     CalificacionComponent,
     EmpresaComponent,
-    LoginComponent,
+    LoginComponent
     
   ],
   imports: [
