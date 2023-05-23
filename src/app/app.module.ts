@@ -29,7 +29,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { CalificacionComponent } from './Components/calificacion/calificacion.component';
 import { EmpresaComponent } from './Components/empresa/empresa.component';
 import { LoginComponent } from './Components/login/login.component';
-
+import { FormsModule} from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -45,6 +46,7 @@ import { LoginComponent } from './Components/login/login.component';
     CalificacionComponent,
     EmpresaComponent,
     LoginComponent
+    
     
   ],
   imports: [
@@ -69,6 +71,8 @@ import { LoginComponent } from './Components/login/login.component';
     HttpClientModule,
     AvatarModule,
     MatFormFieldModule,
+    FormsModule,
+    MatDialogModule
     
   ],
   providers: [],

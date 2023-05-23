@@ -1,8 +1,11 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
+import { CrearActualizarDialog } from './crear-actualizar-dialog/crear-actualizar-dialog-component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-administrador',
@@ -16,7 +19,9 @@ export class AdministradorComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   
 
-  constructor(public api:ApiService){ 
+  constructor(public api:ApiService,
+    private dialog: MatDialog,
+    private ApiService:ApiService){ 
     this.dataSource=new MatTableDataSource;
   }
 
@@ -26,9 +31,48 @@ export class AdministradorComponent implements OnInit {
     
   }
 
+  editarRegistro(dato: any){
+   this.dialog.open(CrearActualizarDialog, {
+      width: '250px',
+      data: dato
+    });
+  }
+
+
+    
+  
+
+  eliminarRegistro(id:any):void{
+    
+
+    Swal.fire({
+      title: 'Estas seguro?',
+      text: "Desea eliminar este administrador!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Eliminar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.ApiService.Delete('Administrador', id).then((res) => {
+
+        });
+        this.GetAdministrador();
+        Swal.fire(
+          'Eliminado!',
+          'Este administrador ha sido eliminado.',
+          'success'
+        )
+      }
+    })
+  }
+
+
   public async GetAdministrador(){
    await this.api.get("Administrador").then((res)=>{
       this.loadTable([res[0]])
+      console.log(res)
       this.dataSource.data=res
      //console.log(this.dataSource.data);
     });
@@ -37,9 +81,14 @@ export class AdministradorComponent implements OnInit {
     //console.log(response);
   }
   loadTable(data:any[]){
-    for(let column in data[0]){
-      this.displayedColumns.push(column)
-    }
+
+      const columnNames = Object.keys(data[0]);
+
+      const updatedColumns = [...columnNames, 'acciones'];
+       this.displayedColumns = updatedColumns;
+
+       console.log( this.displayedColumns)
+    
   }
 
   applyFilter(event: Event) {

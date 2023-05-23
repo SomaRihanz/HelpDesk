@@ -21,9 +21,9 @@ const routes: Routes = [
   {
     path:'Empresa',component:EmpresaComponent
   }, 
-  // {
-  //   path:'Login',component:LoginComponent
-  // }, 
+  {
+   path:'Login',component:LoginComponent
+   }, 
 
 ];
 
