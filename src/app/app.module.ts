@@ -31,11 +31,13 @@ import { EmpresaComponent } from './Components/empresa/empresa.component';
 import { LoginComponent } from './Components/login/login.component';
 import { FormsModule} from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CrearActualizarDialog } from './Components/administrador/crear-actualizar-dialog/crear-actualizar-dialog.component';
 
 
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     AppComponent,
     AdministradorComponent,
@@ -45,7 +47,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormularioComponent,
     CalificacionComponent,
     EmpresaComponent,
-    LoginComponent
+    LoginComponent,
+    CrearActualizarDialog
     
     
   ],
