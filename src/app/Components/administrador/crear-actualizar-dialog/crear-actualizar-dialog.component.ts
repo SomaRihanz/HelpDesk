@@ -61,7 +61,7 @@ export class CrearActualizarDialog {
 
   onSubmit(): void {
     
-    this.dialogRef.close(this.data); // Cerrar el diálogo y devolver los datos actualizados
+    this.dialogRef.close(this.data); 
   }
 
 }

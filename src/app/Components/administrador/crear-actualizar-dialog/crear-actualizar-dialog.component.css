@@ -1,24 +1,30 @@
-
-h2 {
-  margin-bottom: 20px;
+.custom-save-button {
+  background-color: #00ff4c;
+  color: #0b9907;
+  /* Otros estilos personalizados */
 }
 
-mat-form-field {
-  width: 100%;
-  margin-bottom: 20px;
+.custom-close-button {
+  background-color: #dc3545;
+  color: #811212;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
-h4 {
-  margin-bottom: 10px;
+.custom-close-button:hover {
+  background-color: #c82333;
 }
 
-
-.mat-dialog-actions {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
+.custom-close-button:focus {
+  outline: none;
 }
 
-button[type="submit"] {
-  margin-right: 10px;
+.custom-close-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
+

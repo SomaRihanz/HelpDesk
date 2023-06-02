@@ -17,6 +17,7 @@ export class AdministradorComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;  
   @ViewChild(MatSort) sort!: MatSort;
+  dataService: any;
   
 
   constructor(public api:ApiService,
@@ -31,14 +32,60 @@ export class AdministradorComponent implements OnInit {
     
   }
 
-  editarRegistro(dato: any){
-   this.dialog.open(CrearActualizarDialog, {
+  // editarRegistro(dato: any){
+  //  this.dialog.open(CrearActualizarDialog, {
+  //     width: '250px',
+  //     data: dato
+  //   });
+  // }
+  // editarRegistro(dato: any) {
+  //   const dialogRef = this.dialog.open(CrearActualizarDialog, {
+  //     width: '250px',
+  //     data: dato
+  //   });
+  
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     if (result.isConfirmed)  {
+  //       // Aquí puedes realizar la lógica de actualización del registro en la base de datos
+  //       this.ApiService.actualizarRegistro(result).subscribe(
+  //         (response:any) => {
+  //           // Aquí puedes manejar la respuesta exitosa de la actualización
+  //           console.log('Registro actualizado exitosamente');
+  //         },
+  //         (error:any) => {
+  //           // Aquí puedes manejar el error en caso de que ocurra durante la actualización
+  //           console.error('Error al actualizar el registro', error);
+  //           // Puedes mostrar un mensaje de error al usuario, por ejemplo, utilizando un servicio de notificación
+  //         }
+  //       );
+  //     }
+  //   });
+  // }
+  
+  editarRegistro(dato: any) {
+    const dialogRef = this.dialog.open(CrearActualizarDialog, {
       width: '250px',
       data: dato
     });
+  
+    // dialogRef.afterClosed().subscribe(result => {
+    //   if (result === true) {
+    //     // Aquí puedes realizar la lógica de actualización del registro en la base de datos
+    //     this.ApiService.actualizarRegistro(dato).subscribe(
+    //       (response: any) => {
+    //         // Aquí puedes manejar la respuesta exitosa de la actualización
+    //         console.log('Registro actualizado exitosamente');
+    //       },
+    //       (error: any) => {
+    //         // Aquí puedes manejar el error en caso de que ocurra durante la actualización
+    //         console.error('Error al actualizar el registro', error);
+    //         // Puedes mostrar un mensaje de error al usuario, por ejemplo, utilizando un servicio de notificación
+    //       }
+    //     );
+    //   }
+    // });
   }
-
-
+  
     
   
 
