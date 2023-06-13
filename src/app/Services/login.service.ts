@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class LoginService implements OnInit {
 
   constructor () { }
-  login = new BehaviorSubject ( localStorage.getItem ( ' login ' ) || " " ) ;
+  login = new BehaviorSubject ( localStorage.getItem ( 'login' ) || " " ) ;
   ngOnInit( ): void {
     this.login.next(localStorage.getItem('login') || "");
 

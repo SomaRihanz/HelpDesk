@@ -10,68 +10,42 @@
   
 </div> -->
 
-<!-- <h2 mat-dialog-title>Formulario de Editar</h2>
-<div mat-dialog-content>
-  <form (ngSubmit)="onSubmit()">
-    <h4>Nombre usuario</h4>
-    <mat-form-field>      
-      <input matInput placeholder="Nombre" [(ngModel)]="data.nombre" name="nombre" required>
-    </mat-form-field>
-    <h4>Cedula usuario</h4>
-    <mat-form-field>
-      <input matInput placeholder="Cedula" [(ngModel)]="data.cedula" name="cedula" required>
-    </mat-form-field>
-    <h4>Identificacion del usaurio</h4>
-    <mat-form-field>
-      <input matInput placeholder="Numero de ID" [(ngModel)]="data.id" name="id" required>
-    </mat-form-field>
-    <h4>Rol del usuario</h4>
-    <mat-form-field>
-      <input matInput placeholder="Rol" [(ngModel)]="data.rol" name="rol" required>
-    </mat-form-field>
-
-    <div mat-dialog-actions>
-      <button mat-raised-button color="primary" type="submit">Guardar</button>
-      <button mat-button (click)="onNoClick()">Cerrar</button>
-    </div>
-  </form>
-</div>
- -->
 
 
- <h2 mat-dialog-title>Formulario de Editar</h2>
+ <h2 mat-dialog-title>
+  {{ tipoFormulario === "creacion" ? " Crear" : "Actualizar" }} Formulario</h2>
  <div mat-dialog-content>
-   <form (ngSubmit)="onSubmit()">
+   <form  [formGroup]="formEditarUsuario" >
      <div>
        <h4>Nombre usuario</h4>
        <mat-form-field>
-         <input matInput placeholder="Nombre" [(ngModel)]="data.nombre" name="nombre" required>
+         <input matInput placeholder="Nombre" [formControlName]="'nombre'"  required>
        </mat-form-field>
      </div>
      
      <div>
        <h4>Cedula usuario</h4>
        <mat-form-field>
-         <input matInput placeholder="Cedula" [(ngModel)]="data.cedula" name="cedula" required>
+         <input matInput placeholder="Cedula" [formControlName]="'cedula'"  required>
        </mat-form-field>
      </div>
      
      <div>
        <h4>Identificacion del usuario</h4>
        <mat-form-field>
-         <input matInput placeholder="Numero de ID" [(ngModel)]="data.id" name="id" required>
+         <input matInput placeholder="Numero de ID" [formControlName]="'id'"  required>
        </mat-form-field>
      </div>
      
      <div>
        <h4>Rol del usuario</h4>
        <mat-form-field>
-         <input matInput placeholder="Rol" [(ngModel)]="data.rol" name="rol" required>
+         <input matInput placeholder="Rol" [formControlName]="'rol'" required>
        </mat-form-field>
      </div>
  
      <div mat-dialog-actions>
-       <button mat-raised-button color="primary" type="submit">Guardar</button>
+       <button mat-raised-button color="primary" (click)="accion()">Guardar</button>
        <button mat-button (click)="onNoClick()">Cerrar</button>
      </div>
    </form>
