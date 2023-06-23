@@ -2,6 +2,7 @@ import { Component, Inject, OnInit  } from '@angular/core';
 import { FormBuilder, FormGroup, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ApiService } from 'src/app/Services/api.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-actualizar-dialog',
@@ -54,7 +55,13 @@ implements OnInit{
       this.apiservice.Post("Administrador", this.formEditarUsuario.getRawValue())
     .then((res)=>{
       console.log (res)
+      Swal.fire({
+      title: 'Usuario creado',
+      text: 'El usuario ha sido creado exitosamente.',
+      icon: 'success',
+      timer: 3000,
     })
+  })
     }else if(this.tipoFormulario == 'actualizacion'){
       const formulario = {
         idAdministrador: this.informacionUsuario.idAdministrador,

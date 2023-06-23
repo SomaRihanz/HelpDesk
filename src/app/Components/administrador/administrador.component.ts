@@ -43,10 +43,12 @@ export class AdministradorComponent implements OnInit {
   }
   nuevoRegistro() {
     const dialogRef = this.dialog.open(CrearActualizarDialog, {
-      width: '500px',
+      width: '250px',
       height: 'auto',
       
+      
     });
+    
      
   }
   

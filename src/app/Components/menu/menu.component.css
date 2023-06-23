@@ -24,9 +24,9 @@ margin: 20px;
 .avatar-container {
   display: flex;
   align-items: center;
-  margin-left: auto; /* Mueve los avatares hacia la derecha */
+  margin-left: auto; 
 }
 
 .avatar-container ngx-avatar {
-  margin-left: 8px; /* Agrega un espacio entre los avatares */
+  margin-left: 8px; 
 }
